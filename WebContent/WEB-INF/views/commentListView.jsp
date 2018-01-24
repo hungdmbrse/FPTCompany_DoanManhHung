@@ -38,7 +38,7 @@
        </c:forEach>
     </table>
  
-    <a href="createBook" >Create Comment</a>
+    <a href="createComment" >Create Comment</a>
  
     <jsp:include page="_footer.jsp"></jsp:include>
  

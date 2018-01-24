@@ -25,6 +25,7 @@
           <th>page</th>
           <th>Edit</th>
           <th>Delete</th>
+          <th>Comment</th>
        </tr>
        <c:forEach items="${bookList}" var="book" >
           <tr>
@@ -37,6 +38,9 @@
              </td>
              <td>
                 <a href="deleteBook?id=${book.id}">Delete</a>
+             </td>
+             <td>
+                <a href="commentList?id=${book.id}">View</a>
              </td>
           </tr>
        </c:forEach>

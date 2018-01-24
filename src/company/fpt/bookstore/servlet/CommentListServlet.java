@@ -30,9 +30,10 @@ public class CommentListServlet extends HttpServlet {
 	        Connection conn = MyUtils.getStoredConnection(request);
 	 
 	        String errorString = null;
+	        String code = (String) request.getParameter("id");
 	        List<Comment> list = null;
 	        try {
-	            list = DBUtils.queryComment(conn);
+	            list = DBUtils.queryComment(conn, code);
 	        } catch (SQLException e) {
 	            e.printStackTrace();
 	            errorString = e.getMessage();

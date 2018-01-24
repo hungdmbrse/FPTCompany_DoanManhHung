@@ -34,11 +34,12 @@ public class DBUtils {
         return list;
     }
     
-    public static List<Comment> queryComment(Connection conn) throws SQLException {
-        String sql = "Select a.id, a.name, a.book_id from comment a ";
+    public static List<Comment> queryComment(Connection conn, String idBook) throws SQLException {
+        String sql = "Select a.id, a.name, a.book_id from comment a where a.book_id = ?";
  
         PreparedStatement pstm = conn.prepareStatement(sql);
- 
+        pstm.setString(1, idBook);
+        
         ResultSet rs = pstm.executeQuery();
         List<Comment> list = new ArrayList<Comment>();
         while (rs.next()) {
@@ -79,6 +80,29 @@ public class DBUtils {
         }
         return null;
     }
+    
+    public static Comment findComment(Connection conn, String id) throws SQLException {
+        String sql = "Select a.id, a.name, a.book_id from comment a where a.id=?";
+ 
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        pstm.setString(1, id);
+ 
+        ResultSet rs = pstm.executeQuery();
+ 
+        while (rs.next()) {
+        	int idCm = rs.getInt("id");
+        	String name = rs.getString("name");
+        	int bookId = rs.getInt("book_id");
+        	
+        	
+        	Comment comm = new Comment();
+        	comm.setId(idCm);
+        	comm.setName(name);
+        	comm.setBook_id(bookId);
+            return comm;
+        }
+        return null;
+    }
  
     
     public static void updateBook(Connection conn, Book book) throws SQLException {
@@ -93,6 +117,17 @@ public class DBUtils {
  
         pstm.executeUpdate();
     }
+    
+    public static void updateComment(Connection conn, Comment commt) throws SQLException {
+        String sql = "Update comment set name =? where id=? ";
+ 
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        
+        pstm.setString(1, commt.getName());
+        pstm.setInt(2, commt.getId());
+        
+        pstm.executeUpdate();
+    }
     public static void insertBook(Connection conn, Book book) throws SQLException {
         String sql = "Insert into book(id, name, publisher, page) values (?,?,?,?)";
  
@@ -104,6 +139,27 @@ public class DBUtils {
  
         pstm.executeUpdate();
     }
+    
+    public static void insertComment(Connection conn, Comment commt) throws SQLException {
+        String sql = "Insert into comment(id, name, book_id) values (?,?,?)";
+ 
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        pstm.setInt(1, commt.getId());
+        pstm.setString(2, commt.getName());
+        pstm.setInt(3, commt.getBook_id());
+ 
+        pstm.executeUpdate();
+    }
+    public static void deleteComment(Connection conn, int code) throws SQLException {
+        String sql = "Delete From comment where id= ?";
+ 
+        PreparedStatement pstm = conn.prepareStatement(sql);
+ 
+        pstm.setInt(1, code);
+ 
+        pstm.executeUpdate();
+    }
+    
     public static void deleteBook(Connection conn, String code) throws SQLException {
         String sql = "Delete From book where id= ?";
  
@@ -113,5 +169,7 @@ public class DBUtils {
  
         pstm.executeUpdate();
     }
+    
+    
  
 }

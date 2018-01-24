@@ -6,8 +6,6 @@
    <a href="${pageContext.request.contextPath}/">Home</a>
    |
    <a href="${pageContext.request.contextPath}/bookList">Book List</a>
-   |
-   <a href="${pageContext.request.contextPath}/commentList">Comment List</a>
 
     
 </div>  

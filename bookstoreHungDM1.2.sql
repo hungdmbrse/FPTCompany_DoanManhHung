@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bookstorehungdm` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `bookstorehungdm`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bookstorehungdm
@@ -39,7 +37,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (3,'iWillTryMyBest','Albert',876),(4,'ItWorked','MHung',231),(5,'TheIdMustLargerThanThePrivious','sorryForMyLevel',241),(6,'iReallyWantToWorkInYourCompany','ManhHung',432);
+INSERT INTO `book` VALUES (3,'iWillTryMyBest','Albert',8761),(4,'ItWorked','MHung',231),(5,'TheIdMustLargerThanThePrivious','sorryForMyLevel',241),(10,'iHaveTryAllMyBest','NGU',421);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +64,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (1,'Wonderfull !! it made my day',3),(2,'sugoi desu ne, kandoushimasu',4),(3,'i just want to say to the publisher',5);
+INSERT INTO `comment` VALUES (1,'Wonderfull !! it made my year',3),(2,'sugoi desu ne, kandoushimasu',4),(3,'i just want to say to the publisher',5),(4,'Its a good book',5),(6,'Amazing',3),(7,'Wonderfull',3),(8,'So awsome',3);
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -79,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-24 20:28:15
+-- Dump completed on 2018-01-25  0:01:36
