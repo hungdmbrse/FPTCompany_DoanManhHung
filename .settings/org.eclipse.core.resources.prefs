@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/company/fpt/bookstore/conn/ConnectionUtils.java=UTF-8
+encoding//src/company/fpt/bookstore/conn/MySQLConnUtils.java=UTF-8
+encoding//src/company/fpt/bookstore/filter/CookieFilter.java=UTF-8
+encoding//src/company/fpt/bookstore/filter/JDBCFilter.java=UTF-8
+encoding//src/company/fpt/bookstore/servlet/BookListServlet.java=UTF-8
+encoding//src/company/fpt/bookstore/servlet/CreateBookServlet.java=UTF-8
+encoding//src/company/fpt/bookstore/servlet/DeleteBookServlet.java=UTF-8
+encoding//src/company/fpt/bookstore/servlet/EditBookServlet.java=UTF-8
+encoding//src/company/fpt/bookstore/servlet/HomeServlet.java=UTF-8
+encoding//src/company/fpt/bookstore/utils/MyUtils.java=UTF-8
